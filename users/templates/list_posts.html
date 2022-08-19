@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for post in posts %}
+        {{ post.post_name }} {{ post.post_description }}
+        <button type="submit">
+            <a href="{% url 'delete_post' post.pk %}">Delete</a>
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit">
+            <a href="{% url 'update_post' post.pk %}">Update</a>
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit">
+            <a href="{% url 'view_post' post.pk %}">View</a>
+        </button>
+        <br/>
+    {% endfor %}
+</body>
+</html>
